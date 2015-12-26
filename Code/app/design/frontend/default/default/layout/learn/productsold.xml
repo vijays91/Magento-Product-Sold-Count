@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+     <catalog_product_view>
+		<reference name="content">
+			<reference name="product.info">
+				<reference name="alert.urls">
+                    <block type="productsold/productsold" name="productsold" template="productsold/productsold.phtml" /> 
+				</reference>
+			</reference>
+		</reference>
+	</catalog_product_view>
+    <!---
+      	<sales_order_history>
+            <reference name="my.account.wrapper">
+                <reference name="sales.order.history">
+                    <reference name="sales.order.history.info">
+                        <block type="core/template" name="xxx" template="xxx/xxx.phtml" /> 
+                    </reference>
+                </reference>
+            </reference>
+		</sales_order_history>
+    --->
+   
+</layout> 

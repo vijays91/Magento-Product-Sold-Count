@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_catalog_product_edit>	
+        <reference name="product_tabs">
+            <action method="addTab">
+                <name>productsold_setting_tab</name>
+                <block>productsold/adminhtml_catalog_product_tab</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_edit>
+</layout>

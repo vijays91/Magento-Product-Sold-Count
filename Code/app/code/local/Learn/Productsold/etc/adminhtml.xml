@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+<menu>
+    <productsold module="productsold">
+            <title>Products Sold</title>
+            <sort_order>71</sort_order>
+            <children>
+                <dynamic_fields module="productsold">
+                    <title>Manage Reports</title>
+                    <sort_order>20</sort_order>
+                    <action>productsold/adminhtml_productsold/</action>
+                </dynamic_fields>
+				<settings translate="title" module="productsold">
+                    <title>General Settings</title>
+                    <action>adminhtml/system_config/edit/section/productsold_tab</action>
+                    <sort_order>40</sort_order>
+                </settings>
+            </children>
+        </productsold>
+    </menu>
+	
+    <acl>
+        <resources>
+			<all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+			    <children>
+					<productsold>
+						<title>Products Sold</title>
+						<children>
+							<dynamic_fields>
+								<title>General Settings</title>
+							</dynamic_fields>
+						</children>
+					</productsold>		
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <productsold_tab>
+                                        <title>Products Sold</title>
+                                    </productsold_tab>				
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

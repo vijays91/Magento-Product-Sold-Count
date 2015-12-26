@@ -1,0 +1,38 @@
+<?php
+$_helper    = Mage::helper('productsold');
+$product_id = $this->getProductId();
+$_productInfo = $this->getProductInfo($product_id);
+$label   = $_productInfo->getSaleLabel();
+$offline = $_productInfo->getOfflineSale();
+$online  = $this->getOnlineSale($product_id);
+
+$active  = $_helper->productsold_enable();
+$display = $_helper->productsold_display();
+$min_count = $_helper->productsold_min_count();
+
+$label_default = $this->__('SOLD :');
+$total_sale = 0;
+$total_sale = (($display == 1) ? $online : (($display == 2) ? $offline : ($online + $offline)));
+$label = (trim($label) == "") ? $label_default : $label;
+
+
+/*style="padding: 10px 0px; position: relative;clear: both;overflow: hidden;"*/
+if(($total_sale >= $min_count) && ($active)) :
+?>
+<div class="product_sold std" id="product_sold">
+  	<b class="sold_label"><?php echo $label; ?></b>
+  	<b class="sold_total"><?php echo $total_sale; ?></b>
+</div>
+
+<script type="text/javascript">
+    $('product_sold').setStyle({
+        'clear': 'both', 
+        'overflow': 'hidden', 
+        'position': 'relative', 
+        'padding': '10px 0px', 
+        opacity: 0.8
+    });
+</script>
+<?php endif; ?>
+
+

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <myconf_vijaystore translate="label" module="productsold">
+            <label>Vijay</label>
+            <sort_order>100</sort_order>
+        </myconf_vijaystore>
+    </tabs>	
+	
+    <sections>
+        <productsold_tab translate="label" module="productsold">
+            <label>Product Sold</label>
+            <tab>myconf_vijaystore</tab>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <productsold_setting translate="label comment">
+                    <label>Product Sold Setting</label>
+                    <sort_order>503</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                      <productsold_active translate="label comment">
+                            <label>Product Sold</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productsold_active>
+						<productsold_display translate="label comment">
+                            <label>Display In</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>productsold/dropdown_sales</source_model>
+							<validate>required-entry </validate>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productsold_display>
+						<productsold_min_count translate="label comment">
+                            <label>Product Sold Minimum Count</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-number</validate>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</productsold_min_count>
+                     </fields>
+                </productsold_setting>		
+            </groups>
+        </productsold_tab>
+    </sections>
+</config>

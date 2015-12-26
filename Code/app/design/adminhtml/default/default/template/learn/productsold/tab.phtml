@@ -1,0 +1,73 @@
+<?php 
+/* 
+    Get Product Information
+*/
+$product_info = $this->getInfo(); 
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">
+            <?php echo $this->getTabTitle();?>
+        </h4>
+    </div>
+    
+    <fieldset>
+        <legend><?php echo $this->getTabTitle();?></legend>        
+        <table cellspacing="0" id="table_productsold" class="form-list">
+            <tbody>
+                <tr>
+                    <td class="label">
+                        <label for="product_name">
+                            <?php echo $this->__('Product Name');?>
+                        </label>
+                    </td>
+                    <td class="value">
+                        <?php echo $product_info->getName() ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">
+                        <label for="product_sku">
+                            <?php echo $this->__('Product SKU');?>
+                        </label>
+                    </td>
+                    <td class="value">
+                        <?php echo $product_info->getSku() ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">
+                        <label for="prud_sold_online_sale">
+                            <?php echo $this->__('Online Sale');?>
+                        </label>
+                    </td>
+                    <td class="value">
+                        <?php echo $this->online_sales($product_info->getId()); ?>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label">
+                        <label for="prud_sold_offline_sale">
+                            <?php echo $this->__('Offline Sale');?>
+                        </label>
+                    </td>
+                    <td class="value">
+                        <input type="text" class="input-text required-entry validate-number" name="product[offline_sale]" id="prud_sold_offline_sale" value="<?php echo $product_info->getOfflineSale();?>" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label">
+                        <label for="prud_sold_sale_label">
+                            <?php echo $this->__('Sale Label');?>
+                        </label>
+                    </td>
+                    <td class="value">
+                        <input type="text" class="input-text required-entry" name="product[sale_label]" id="prud_sold_sale_label" value="<?php echo $product_info->getSaleLabel();?>" />
+                    </td>
+                </tr>            
+            </tbody>
+        </table>
+    </fieldset>
+</div>

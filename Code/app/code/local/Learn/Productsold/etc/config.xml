@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Learn_Productsold>
+            <version>1.0.0</version>
+        </Learn_Productsold>
+    </modules>
+    
+    <frontend>
+		<routers>
+			<productsold>
+				<use>standard</use>
+				<args>
+					<module>Learn_Productsold</module>
+					<frontName>productsold</frontName>
+				</args>
+			</productsold>
+		</routers>
+		<layout>
+			<updates>
+				<productsold>
+					<file>learn/productsold.xml</file>
+				</productsold>
+			</updates>
+		</layout>
+	</frontend>
+    
+    <global>
+		<blocks>
+            <productsold>
+                <class>Learn_Productsold_Block</class>
+            </productsold>
+        </blocks>
+		
+		<helpers>
+			<productsold>
+				<class>Learn_Productsold_Helper</class>
+			</productsold>
+		</helpers>
+        
+		<models>
+			<productsold>
+				<class>Learn_Productsold_Model</class>
+			</productsold>
+		</models> 
+        <resources>
+            <productsold_setup>
+                <setup>
+                    <module>Learn_Productsold</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+             </productsold_setup>
+                          
+            <productsold_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </productsold_write>
+            
+            <productsold_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </productsold_read>
+        </resources>
+       
+    </global>
+	
+	<admin>
+        <routers>
+            <productsold>
+                <use>admin</use>
+                <args>
+                    <module>Learn_Productsold</module>
+                    <frontName>productsold</frontName>
+                </args>
+            </productsold>
+        </routers>
+    </admin>
+ 	
+	<adminhtml>
+		<layout>
+			<updates>
+				<productsold module="productsold">
+					<file>learn/productsold.xml</file>
+				</productsold>
+			</updates>
+		</layout>
+	</adminhtml>
+    
+	<default>
+		<productsold_tab>
+			<productsold_setting>
+				<productsold_active>1</productsold_active>
+				<productsold_display>3</productsold_display>
+				<productsold_min_count>0</productsold_min_count>
+			</productsold_setting>
+		</productsold_tab>
+	</default>
+</config>
